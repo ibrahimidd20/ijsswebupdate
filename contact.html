@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | Ibrajust Security Services L.L.C.</title>
+  <meta name="description" content="Contact Ibrajust Security Services L.L.C or request a custom security quote. Professional guard services, event security, and mobile patrols."/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <div class="nav-container">
+    <a href="index.html">
+      <img src="assets/images/ijss_logo_1280x720.png"
+           alt="Ibrajust Security Services L.L.C. Logo"
+           class="logo-img" />
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="index.html"><h2>HOME</h2></a></li>
+        <li><a href="about.html"><h2>ABOUT</h2></a></li>
+        <li><a href="services.html"><h2>SERVICES</h2></a></li>
+        <li><a href="contact.html" class="active"><h2>CONTACT</h2></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero (Image Only) -->
+<section class="hero hero-image-only"></section>
+
+<!-- Intro Under Hero -->
+<section class="page-intro">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>
+      Get in touch with Ibrajust Security Services L.L.C. to discuss your security
+      needs or request a customized quote.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Content -->
+<section>
+  <div class="container">
+
+    <div class="contact-direct">
+      <h3>Speak Directly With Us</h3>
+      <p>For immediate assistance or urgent security needs, call us directly:</p>
+
+      <p id="call-status-note" class="call-status"></p>
+
+      <a href="tel:+9174502743" class="call-button" onclick="handleCallClick()">
+        📞 (917) 450-2743
+      </a>
+
+      <p class="contact-email">
+        Email us at:
+        <strong>
+          <a href="mailto:info@ibrajustss.com">info@ibrajustss.com</a>
+        </strong>
+      </p>
+
+      <p>Or use the form below to request a free quote.</p>
+    </div>
+
+    <div class="section-title">
+      <h2>Request a Free Quote Today.</h2>
+      <p>Tell us about your security needs and we’ll respond promptly.</p>
+    </div>
+
+    <form class="contact-form" id="quoteForm">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option>Security Guard Services</option>
+        <option>Event Security</option>
+        <option>Mobile Patrol</option>
+        <option>Access Control & Monitoring</option>
+        <option>Loss Prevention</option>
+        <option>24/7 Security Support</option>
+      </select>
+
+      <select name="urgency" required>
+        <option value="">Urgency Level</option>
+        <option>Immediate (24–48 hrs)</option>
+        <option>Within 7 Days</option>
+        <option>Planning Phase</option>
+      </select>
+
+      <textarea
+        name="details"
+        rows="5"
+        placeholder="Describe your security needs"
+        required></textarea>
+
+      <button type="submit">Submit Quote Request</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>
+    &copy; 2025 — Ibrajust Security Services L.L.C. 
+  </p>
+
+  <p>
+    <a href="ibrajustss.com">
+    <span>www.IbrajustSS.com | </span></a>
+    <a href="mailto:info@ibrajustss.com"><span>info@ibrajustss.com</span></a>
+    <a href="tel:+9174502743" onclick="handleCallClick()">
+    <strong><span> | (917) 450-2743</span></strong>
+    </a>
+  </p>
+
+  <p>All Rights Reserved | Website Designed By PrimeCraft Digital.</p>
+</footer>
+
+<script src="assets/js/quote.js"></script>
+<script src="assets/js/call.js"></script>
+
+</body>
+</html>

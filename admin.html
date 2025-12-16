@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Admin Dashboard | Ibrajust Security Services</title>
+  
+  <meta name="description" content="Admin dashboard for managing and tracking security quote requests at Ibra Just Security Services."/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  
+  <style>
+    /* Admin-specific table styling */
+    .admin-container {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px 20px;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
+      font-size: 14px;
+      color: #1f2933;
+    }
+
+    th {
+      background: #0b1c2d;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #f5f7fa;
+    }
+
+    .no-quotes {
+      text-align: center;
+      padding: 20px;
+      color: #374151;
+    }
+
+    @media (max-width: 768px) {
+      th, td {
+        font-size: 12px;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="nav-container">
+    
+    <a href="index.html">
+    <img src="assets/images/ijss_logo_1280x720_blk.png" alt="Ibrajust Security Services Logo" class="logo-img"/>
+    </a> 
+
+    <nav>
+      <ul>
+        <li><a href="index.html"><h2>HOME</h2></a></li>
+        <li><a href="about.html"><h2>ABOUT</h2></a></li>
+        <li><a href="services.html"><h2>SERVICES</h2></a></li>
+        <li><a href="contact.html"><h2>CONTACT</h2></a></li>
+        <li><a href="admin.html" class="active"><h2>ADMIN</h2></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Admin Dashboard -->
+<section class="admin-container">
+  <h1>QUOTE REQUESTS DASHBOARD</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Service</th>
+        <th>Urgency</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody id="quotesTableBody">
+      <!-- Quotes will be dynamically injected here -->
+    </tbody>
+  </table>
+</section>
+
+<!-- Added To Track Call Clicks -->
+
+<section class="admin-section">
+  <h2>Call Activity</h2>
+
+  <table id="callTable">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <p>
+    &copy; 2025 — Ibrajust Security Services L.L.C. 
+  </p>
+
+  <p>
+    <a href="ibrajustss.com">
+    <span>www.IbrajustSS.com | </span></a>
+    <a href="mailto:info@ibrajustss.com"><span>info@ibrajustss.com</span></a>
+    <a href="tel:+9174502743" onclick="handleCallClick()">
+    <strong><span> | (917) 450-2743</span></strong>
+    </a>
+  </p>
+
+  <p>All Rights Reserved | Website Designed By PrimeCraft Digital.</p>
+</footer>
+
+<!-- Admin JS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const tableBody = document.getElementById("quotesTableBody");
+  const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+
+  if (quotes.length === 0) {
+    tableBody.innerHTML = `<tr><td colspan="6" class="no-quotes">No quotes submitted yet.</td></tr>`;
+    return;
+  }
+
+  quotes.forEach((quote) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${quote.date}</td>
+      <td>${quote.name}</td>
+      <td>${quote.email}</td>
+      <td>${quote.service}</td>
+      <td>${quote.urgency}</td>
+      <td>${quote.details}</td>
+    `;
+    tableBody.appendChild(row);
+  });
+});
+</script>
+
+</body>
+</html>
